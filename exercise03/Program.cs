@@ -21,50 +21,54 @@ namespace exercise03
 			points[0] = GetPointFromUser("A"); // присваиваем значение точки 0 с названием А. 
 			points[1] = GetPointFromUser("B");
 			points[2] = GetPointFromUser("C");
-			points[3] = GetPointFromUser("D");
-			points[4] = GetPointFromUser("E");
+			//points[3] = GetPointFromUser("D");
+			//points[4] = GetPointFromUser("E");
 
 			// расчет сторон
 			// формула вычисления стороны по координатам
 			// d = кв.кор из (x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)
 			double AB = CalcSideLength(points[0], points[1]);
+			Console.WriteLine($"Line length AB = {AB}");
 			// следующие 6 сторон
 			double BC = CalcSideLength(points[1], points[2]);
-			double CD = CalcSideLength(points[2], points[3]);
-			double DE = CalcSideLength(points[3], points[4]);
-			double AE = CalcSideLength(points[0], points[4]);
+			Console.WriteLine($"Line length BC = {BC}");
+			//double CD = CalcSideLength(points[2], points[3]);
+			//double DE = CalcSideLength(points[3], points[4]);
+			//double AE = CalcSideLength(points[0], points[4]);
 			double AC = CalcSideLength(points[0], points[2]);
-			double CE = CalcSideLength(points[2], points[4]);
+			Console.WriteLine($"Line length AC = {AC}");
+			//double CE = CalcSideLength(points[2], points[4]);
 			// следующие 6 сторон
 
 
 			// площадь каждого треугольника
-			double ABC = CalcTriangleArea(AB, BC, AC);
+			//double ABC = CalcTriangleArea(AB, BC, AC);
 			// следюущие 2 треугольника
-			double ACE = CalcTriangleArea(AC, CE, AE);
-			double ECD = CalcTriangleArea(CE, CD, DE);
+			//double ACE = CalcTriangleArea(AC, CE, AE);
+			//double ECD = CalcTriangleArea(CE, CD, DE);
 
 			//общая площадь
-			double totalArea = ABC + ACE + ECD; 
-			
+			//double totalArea = ABC + ACE + ECD;
+
 			// вывод на консоль consolewriteln 
+
 		}
 		// функция 01 расчета площади треугльника 
-		static double CalcTriangleArea(double side1, double side2, double side3)
-		{
+		//static double CalcTriangleArea(double side1, double side2, double side3)
+		//{
 			// расчет площади треугольника по длине сторон
 			// формула Герона		 S = √ (a + b + c)/2 * ((a + b + c)/2 − a) * ((a + b + c)/2 − b) * ((a + b + c)/2 − c)
 			// где 	p = (a + b + c)/2 : 2
 			//public double side1 = Math.Sqrt();
-			throw new NotImplementedException();
-		}
+		//	throw new NotImplementedException();
+		//}
 
 		// функция 02 расчета длины стороны треугольника
 		static double CalcSideLength (Point point1, Point point2) // здесь Point - это класс, а point1 и point2 - значения.
 		{
-			// расстояние между точками по координатам. расчет side
-			throw new NotImplementedException();
-		}
+			double CalcSideLength = Math.Sqrt((point2.X - point1.X) * (point1.X - point1.X) + (point2.Y - point1.Y) * (point2.Y - point1.Y));
+			return CalcSideLength;
+		} 
 
 		// функция 03 получения данных координат от пользователя
 		static Point GetPointFromUser (string pointName) // получаем от пользователя строку (string) 'pointName'
@@ -72,6 +76,7 @@ namespace exercise03
 			Console.WriteLine($"Enter coordinates of point {pointName}");
 			Point point = new Point();		// выделяем место в памяти (в куче)
 			string[] inputs = Console.ReadLine().Split(';'); // для разделения используем ; потому что русская консоль
+			
 			point.X = double.Parse(inputs[0]);
 			point.Y = double.Parse(inputs[1]);
 			return point;
