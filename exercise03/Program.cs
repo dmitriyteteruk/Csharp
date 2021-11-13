@@ -97,7 +97,7 @@ namespace exercise03
 			return CalcSideLength;
 		}
 
-		// функция 03 получения данных координат от пользователя
+		// функция или метод 03 получения данных координат от пользователя
 		static Point GetPointFromUser(string pointName) // получаем от пользователя строку (string) 'pointName'
 		{
 			Console.WriteLine($"Enter coordinates of point {pointName}");
