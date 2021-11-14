@@ -1,48 +1,55 @@
-﻿/* Задание 4
- * Напишите программу, которая определяет корректность хода ферзя, заданного в шахматной нотации, например “e2-e4” – некорректный, а “c2-c3”, “c2-e2”, “c2-f5” – корректные ходы.
- * 1. Определить логику:
- *		- ход по вертикали ОК
- *		- ход по горизонтали ОК
- *		- ход по диагонали ОК
- * 2. получить данные от пользователя
- * 3. проверить, может ли быть выполнен такой код
- * 4. вывести результат
- */
-using System;
-namespace exercise04
+﻿using System;
 
+namespace Exercise04Chess
 {
-	// создаем класс - Point
-	public class Point
-	{
-		public char Letter;	 // буква A, B, C, D, E, F, G, H
-		public int Number;	 // цифра 1, 2, 3, 4, 5, 6, 7, 8
-	}
+  
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			Console.WriteLine("Hello World! Ex 4\n\n\n");
+            // Ввод данных с клавиатуры
+            static string GetMoveFromUser()
+            {
+                Console.WriteLine("Enter move ");
+                string chees_move = Console.ReadLine();
+                return chees_move;
+            }
 
-			Point[] points = new Point[2]; // создаем новый массив из 2 точек
-			points[0] = GetPointFromUser("From"); // точка начала From - в массиве индекс 0 
-			points[1] = GetPointFromUser("To");   // точка начала To - в массиве индекс 1
+            // Запуск проверки хода
+            string chees_move = GetMoveFromUser();
+            if (chees_move.Length == 5) // проверяем, что введено 5 символов. если меньше или больше, то ошибка
+            {
+                char[] chess_move_array = chees_move.ToCharArray(); // создаем массив char
+                string start_move_letter = Convert.ToString(chess_move_array[0]).ToUpper(); // присваиваем переменной значения из массива и конвертируем их 
+                string start_move_number = Convert.ToString(chess_move_array[1]);           // присваиваем переменной значения из массива и конвертируем их
+                string finish_move_letter = Convert.ToString(chess_move_array[3]).ToUpper();// присваиваем переменной значения из массива и конвертируем их
+                string finish_move_number = Convert.ToString(chess_move_array[4]);          // присваиваем переменной значения из массива и конвертируем их
 
-		}
+                char start_move_letter_char = Convert.ToChar(start_move_letter);            // cоздаем переменную char и int, чтобы использовать IF ELSE
+                char finish_move_letter_char = Convert.ToChar(finish_move_letter);          // cоздаем переменную char и int, чтобы использовать IF ELSE
+                int start_move_number_int = Convert.ToInt32(start_move_number);             // cоздаем переменную char и int, чтобы использовать IF ELSE
+                int finish_move_number_int = Convert.ToInt32(finish_move_number);           // cоздаем переменную char и int, чтобы использовать IF ELSE
 
+                // Далее сравниваем - ЕСЛИ буква одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ
+                if (start_move_letter_char == finish_move_letter_char && start_move_number_int <= 8 || start_move_number_int >= 1)
+                {
+                    Console.WriteLine($"Move {chees_move} is correct");
+                }
 
-		// функция или метод 03 получения данных координат от пользователя
-		static Point GetPointFromUser(string pointName) // получаем от пользователя строку (string) 'pointName'
-		{
-			Console.WriteLine($"Enter value FROM for step {pointName}");
-			Point point = new Point();      // выделяем место в памяти (в куче)
-			string[] inputs = Console.ReadLine().Split(';'); // для разделения используем ; потому что русская консоль
+                // Далее сравниваем - ЕСЛИ цифра одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ (надо понять как проверить на БУКВЫ
+                else if (start_move_number_int == finish_move_number_int && start_move_number_int <= 8 || start_move_number_int >= 1)
+                {
+                    Console.WriteLine($"Move {chees_move} is correct");
+                }
+                else if (start_move_letter_char == 0) ;
 
-			point.Letter = char.Parse(inputs[0]);
-			point.Number = int.Parse(inputs[1]);
-			return point;
-		}
-	}
-
+                // Далее надо сравнить диагонали - пока не ясно как.
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
 }
