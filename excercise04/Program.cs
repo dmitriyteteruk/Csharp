@@ -5,6 +5,21 @@ namespace Exercise04Chess
   
     class Program
     {
+        
+        enum Letters : int
+		{
+           A = 1,
+           B = 2,
+           C = 3,
+           D = 4,
+           E = 5,
+           F = 6,
+           G = 7,
+           H = 8
+		}
+
+
+        
         static void Main(string[] args)
         {
 
@@ -42,7 +57,14 @@ namespace Exercise04Chess
                 {
                     Console.WriteLine($"Move {chees_move} is correct");
                 }
-                else if (start_move_letter_char == 0) ;
+                
+
+                else if ((finish_move_number_int == (start_move_number_int) + 1) && (finish_move_number_int <= 8 || finish_move_number_int > 1) &&
+                    (start_move_letter_char != finish_move_letter_char) || (start_move_letter_char == Letters.A))
+
+                {
+                    Console.WriteLine($"Move {chees_move} is correct");
+                }
 
                 // Далее надо сравнить диагонали - пока не ясно как.
             }
@@ -50,6 +72,8 @@ namespace Exercise04Chess
             {
                 Console.WriteLine("error");
             }
+
+            bool diagonal_check_number;
         }
     }
 }
