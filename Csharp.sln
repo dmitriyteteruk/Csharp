@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-3_refs_to_object", "day
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercise05-magic-dates", "exercise05-magic-dates\exercise05-magic-dates.csproj", "{14C0D61F-D248-44A3-ABC1-0A7DD6351C53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "excercise06-random-password-generator", "excercise06-random-password-generator\excercise06-random-password-generator.csproj", "{0EB39D88-BF5A-4DAB-A27A-7D9F5710CA74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{14C0D61F-D248-44A3-ABC1-0A7DD6351C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C0D61F-D248-44A3-ABC1-0A7DD6351C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C0D61F-D248-44A3-ABC1-0A7DD6351C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB39D88-BF5A-4DAB-A27A-7D9F5710CA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB39D88-BF5A-4DAB-A27A-7D9F5710CA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB39D88-BF5A-4DAB-A27A-7D9F5710CA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB39D88-BF5A-4DAB-A27A-7D9F5710CA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
