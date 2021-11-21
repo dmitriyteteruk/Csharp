@@ -59,15 +59,15 @@ namespace Exercise04Chess
                 }
                 else
                 {
-                    Console.WriteLine("Move is not correct for Queen");
+                    Console.WriteLine("Move is not correct for Queen");     // сообщение об ошибке хода Ферзя
                 }
                 
             }
             else
             {
-                Console.WriteLine("Move is not correct");
+                Console.WriteLine("Move is not correct");                   // сообщение об ошибке при вводе
             }
-            Console.WriteLine("\n\n\nPress enter to close the program.");
+            Console.WriteLine("\n\n\nPress enter to close the program.");   // сообщение пользователю
             Console.ReadKey();
         }
     }
