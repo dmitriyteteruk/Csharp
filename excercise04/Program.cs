@@ -50,7 +50,7 @@ namespace Exercise04Chess
                 // 
                 else if (
                     start_move_number_int == start_move_letter_int &&                     // число начала букв = числам
-                    start_move_number_int == finish_move_number_int &&                    // конец начала букв = числам , то диагональ
+                    finish_move_number_int == finish_move_letter_int &&                    // конец начала букв = числам , то диагональ
                     start_move_number_int <= 8 && start_move_number_int >= 1 &&           // проверяем диапазон 1-8
                     finish_move_number_int <= 8 && finish_move_number_int >= 1)           // проверяем диапазон 1-8
                 {
@@ -67,6 +67,7 @@ namespace Exercise04Chess
             {
                 Console.WriteLine("Move is not correct");
             }
+            Console.WriteLine("\n\n\nPress enter to close the program.");
             Console.ReadKey();
         }
     }
