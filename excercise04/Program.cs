@@ -40,7 +40,7 @@ namespace Exercise04Chess
                     Console.WriteLine($"Move {chees_move} is correct and it's a row move");
                 }
 
-                // Далее сравниваем - ЕСЛИ цифра одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ (надо понять как проверить на БУКВЫ
+                // Далее сравниваем - ЕСЛИ цифра одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ
                 else if (start_move_number_int == finish_move_number_int && start_move_letter_int <= 8 && finish_move_letter_int >= 1)
                 {
                     Console.WriteLine($"Move {chees_move} is correct and it's a column move");
