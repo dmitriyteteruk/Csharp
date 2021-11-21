@@ -37,13 +37,13 @@ namespace exercise05_magic_dates
 				
 				int SumDayMonth = dt.Day + dt.Month;	// считаем сумму дня и месяца
 				
-				string year_full_string = Convert.ToString(dt.Year);
-				string year_short_string = year_full_string.ToString().Substring(2);
-				int year_int = Convert.ToInt32(year_short_string);
+				string year_full_string = Convert.ToString(dt.Year);				  // преобразуем ГОД из DateTime в String
+				string year_short_string = year_full_string.ToString().Substring(2);  // считываем только последние 2 цифры года
+				int year_int = Convert.ToInt32(year_short_string);					  // преобразуем последние 2 цифры года из String в Int
 
-				string print_dt = Convert.ToString(dt).Substring(0, 10);
+				string print_dt = Convert.ToString(dt).Substring(0, 10);			  // оставляем в дате только ДД.ММ.ГГГГ (время отбрасываем)
 
-				if (SumDayMonth == year_int)
+				if (SumDayMonth == year_int)										  // если сумма ДД + ММ = __ГГ, то выводим в консоль
 				{
 					Console.WriteLine($"Magic Date {print_dt}");
 				}
