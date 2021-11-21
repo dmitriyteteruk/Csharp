@@ -54,6 +54,7 @@ namespace Exercise04Chess
                     start_move_number_int <= 8 && start_move_number_int >= 1 &&           // проверяем диапазон 1-8
                     finish_move_number_int <= 8 && finish_move_number_int >= 1)           // проверяем диапазон 1-8
                 {
+
                     Console.WriteLine($"Move {chees_move} is correct and it's dioganal move");
                 }
                 else
@@ -66,6 +67,7 @@ namespace Exercise04Chess
             {
                 Console.WriteLine("Move is not correct");
             }
+            Console.ReadKey();
         }
     }
 }
