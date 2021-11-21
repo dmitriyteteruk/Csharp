@@ -34,7 +34,7 @@ namespace exercise03
 		{
 			Console.WriteLine("Hello World! Ex 3\n\n\n");
 			Point[] points = new Point[5]; // создаем новый массив из 5 точек (у нас пятиугольник)
-			points[0] = GetPointFromUser("A"); // присваиваем значение точки 0 с названием А. 
+			points[0] = GetPointFromUser("A"); // присваиваем значение точки 0 с названием А. Здесь GetPointFromUsr - это метод. 
 			points[1] = GetPointFromUser("B");
 			points[2] = GetPointFromUser("C");
 			points[3] = GetPointFromUser("D");
@@ -43,7 +43,7 @@ namespace exercise03
 			// расчет сторон
 			// формула вычисления стороны по координатам
 			// d = кв.кор из (x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)
-			double AB = CalcSideLength(points[0], points[1]);
+			double AB = CalcSideLength(points[0], points[1]);	// здесь CalcSidLngth это метод и points - это параметры в нем.
 			Console.WriteLine($"Line length AB = {AB}");
 
 			double BC = CalcSideLength(points[1], points[2]);

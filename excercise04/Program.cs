@@ -5,21 +5,7 @@ namespace Exercise04Chess
   
     class Program
     {
-        
-        enum Letters : int
-		{
-           A = 1,
-           B = 2,
-           C = 3,
-           D = 4,
-           E = 5,
-           F = 6,
-           G = 7,
-           H = 8
-		}
-
-
-        
+             
         static void Main(string[] args)
         {
 
@@ -45,35 +31,41 @@ namespace Exercise04Chess
                 char finish_move_letter_char = Convert.ToChar(finish_move_letter);          // cоздаем переменную char и int, чтобы использовать IF ELSE
                 int start_move_number_int = Convert.ToInt32(start_move_number);             // cоздаем переменную char и int, чтобы использовать IF ELSE
                 int finish_move_number_int = Convert.ToInt32(finish_move_number);           // cоздаем переменную char и int, чтобы использовать IF ELSE
+                int start_move_letter_int = start_move_letter_char - 64;
+                int finish_move_letter_int = finish_move_letter_char - 64;
 
                 // Далее сравниваем - ЕСЛИ буква одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ
-                if (start_move_letter_char == finish_move_letter_char && start_move_number_int <= 8 || start_move_number_int >= 1)
+                if (start_move_letter_int == finish_move_letter_int && start_move_number_int <= 8 && start_move_number_int >= 1)
                 {
-                    Console.WriteLine($"Move {chees_move} is correct");
+                    Console.WriteLine($"Move {chees_move} is correct and it's a row move");
                 }
 
                 // Далее сравниваем - ЕСЛИ цифра одинаковая и цифры между 1 и 8, то ход ВЕРНЫЙ (надо понять как проверить на БУКВЫ
-                else if (start_move_number_int == finish_move_number_int && start_move_number_int <= 8 || start_move_number_int >= 1)
+                else if (start_move_number_int == finish_move_number_int && start_move_letter_int <= 8 && finish_move_letter_int >= 1)
                 {
-                    Console.WriteLine($"Move {chees_move} is correct");
+                    Console.WriteLine($"Move {chees_move} is correct and it's a column move");
+                }
+
+                // далее сравниваем диагональ
+                // 
+                else if (
+                    start_move_number_int == start_move_letter_int &&                     // число начала букв = числам
+                    start_move_number_int == finish_move_number_int &&                    // конец начала букв = числам , то диагональ
+                    start_move_number_int <= 8 && start_move_number_int >= 1 &&           // проверяем диапазон 1-8
+                    finish_move_number_int <= 8 && finish_move_number_int >= 1)           // проверяем диапазон 1-8
+                {
+                    Console.WriteLine($"Move {chees_move} is correct and it's dioganal move");
+                }
+                else
+                {
+                    Console.WriteLine("Move is not correct for Queen");
                 }
                 
-
-                else if ((finish_move_number_int == (start_move_number_int) + 1) && (finish_move_number_int <= 8 || finish_move_number_int > 1) &&
-                    (start_move_letter_char != finish_move_letter_char) || (start_move_letter_char == Letters.A))
-
-                {
-                    Console.WriteLine($"Move {chees_move} is correct");
-                }
-
-                // Далее надо сравнить диагонали - пока не ясно как.
             }
             else
             {
-                Console.WriteLine("error");
+                Console.WriteLine("Move is not correct");
             }
-
-            bool diagonal_check_number;
         }
     }
 }
