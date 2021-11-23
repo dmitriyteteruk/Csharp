@@ -35,7 +35,7 @@ namespace exercise05_magic_dates
 			{
 				dates.Add(dt);
 				
-				int SumDayMonth = dt.Day + dt.Month;	// считаем сумму дня и месяца
+				int SumDayMonth = dt.Day * dt.Month;	// считаем сумму дня и месяца
 				
 				string year_full_string = Convert.ToString(dt.Year);				  // преобразуем ГОД из DateTime в String
 				string year_short_string = year_full_string.ToString().Substring(2);  // считываем только последние 2 цифры года
