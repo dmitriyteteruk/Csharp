@@ -1,5 +1,5 @@
 ﻿//
-// Программа кодирования массива
+// Программа кодирования массива  УРА!
 //
 using System;
 using System.Collections.Generic;
