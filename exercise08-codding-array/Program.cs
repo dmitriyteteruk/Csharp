@@ -30,7 +30,7 @@ namespace excercise08_array_coding
 			// сравниваем символы и если совпадают то суммируем
 
 			// создаем массив максимальной длины
-			char[] Symbol_Count_Array = new char[Generate_Ranadom_Chars_String().Length];
+			char[,] Symbol_Count_Array = new char[Generate_Ranadom_Chars_String().Length, 2];
 			int counter = 1;     // начальное значения счетчика
 			int counter_max_sum = All_Symbols_String.Length; // контроль Exception для счетчика
 			Console.WriteLine("Below you can find array with format CHAR:COUNT\n");
@@ -44,6 +44,8 @@ namespace excercise08_array_coding
 				else
 				{
 					Console.WriteLine($"{(Array_With_Symbols[i])} = {counter}"); // выводим в консоль символ и количество
+					//char[,] vs = new char[2, counter_max_sum];
+					//vs[Convert.ToChar(Array_With_Symbols[i]), counter];
 					counter = 1;                                                 // выставляем счетчик на 1
 
 				}
@@ -66,24 +68,5 @@ namespace excercise08_array_coding
 			string all_chars_string = new string(array_with_chars).ToString();      // переводим рандомный массив символов в строку
 			return new string(all_chars_string);                                    // возвращаем строку
 		}
-
-		//// преобразовываем строку символов в массив - ЧЕРЕЗ МЕТОД НЕ ПОЛУЧИЛОСЬ
-		//public static char[] Parse100CharsToIndividuals()
-		//{
-		//	char[] IndividualSymbol = new char[Generate100CharsString().Length];     // создаем массив на 100 символов из строки
-
-		//	for (int i = 0; i < Generate100CharsString().Length; i++) 				  // для каждого символа в строке до конца длины
-		//	{
-		//		IndividualSymbol[i] = Generate100CharsString()[i];				  // приравниваем кажому символу в массиве значение из строки 
-		//	}
-
-		//	foreach (char Symbol in IndividualSymbol)
-		//	{
-		//		Console.WriteLine(Symbol);
-		//	}
-
-		//	return IndividualSymbol;
-
-		//}
 	}
 }
