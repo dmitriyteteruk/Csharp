@@ -2,6 +2,7 @@
 // Программа кодирования массива  УРА!
 //
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace excercise08_array_coding
@@ -10,7 +11,7 @@ namespace excercise08_array_coding
 	{
 
 		// метод генерации строки со 100 рандомными символами
-		public static string Generate_Ranadom_Chars_String(int length = 20)     // генерируем рандомно length символов
+		public static string Generate_Ranadom_Chars_String(int length = 100)     // генерируем рандомно length символов
 		{
 			string validChars = "ABC";                                          // генерация из указанных символов
 			Random random = new Random();
@@ -45,15 +46,13 @@ namespace excercise08_array_coding
 				Array_With_Symbols[i] = All_Symbols_String[i];
 			}
 
+			// создаем список с для всех значений подряд
+			ArrayList newstring = new ArrayList();
+
 			// сравниваем символы и если совпадают то суммируем
-
-			// создаем двумерный массив типа 'string' максимальной длины
-			string[,] Symbol_Count_Array;
-			Symbol_Count_Array = new string[All_Symbols_String.Length, 2];
-
 			int counter = 1;     // начальное значения счетчика
 			int counter_max_sum = All_Symbols_String.Length; // контроль Exception для счетчика
-			Console.WriteLine("Below you can find array with format CHAR:COUNT\n");
+			Console.WriteLine("Below you can find array with format CHAR = COUNT\n");
 			// запускаем перебор всех записей в массиве
 			for (int i = 0; i < counter_max_sum; i++)
 
@@ -66,13 +65,13 @@ namespace excercise08_array_coding
 					string Symbol_a = Array_With_Symbols[i].ToString();
 					string Counter_b = counter.ToString();
 					Console.WriteLine($"{Symbol_a} = {Counter_b}"); // выводим в консоль символ и количество
-					
-					
-					//Symbol_Count_Array new string[,] { { Symbol_a, Counter_b } };
+					{
+						newstring.Add(Symbol_a); newstring.Add(Counter_b);  // добавляем значения в список
+					}
 
 					counter = 1;                                                 // выставляем счетчик на 1
 
-				}
+				}  
 			Console.WriteLine("\nProgram has end it's process. Please press any key to close the window.");
 			Console.ReadKey();
 		}
